@@ -30,7 +30,7 @@ const Notekeeper = () => {
     } else if (num && !iconstate) {
       setarr(
         arr.map((elem) => {
-          if (elem.id == edited) {
+          if (elem.id === edited) {
             return { ...elem, content: num };
           }
           return elem;
@@ -48,7 +48,7 @@ const Notekeeper = () => {
 
   const deleter = (id) => {
     const updatedarr = arr.filter((elem) => {
-      return id != elem.id;
+      return id !== elem.id;
     });
 
     setarr(updatedarr);
@@ -56,7 +56,7 @@ const Notekeeper = () => {
 
   const edit = (id) => {
     const editedelem = arr.find((elem) => {
-      return elem.id == id;
+      return elem.id === id;
     });
 
     setnum(editedelem.content);
